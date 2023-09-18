@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2023-09-18T23:01:29+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">William Tirtadjaja</title><subtitle></subtitle><author><name>William Tirtadjaja</name><email>tirtadjajawilliam@gmail.com</email></author><entry><title type="html">Android Root Detection Bypass</title><link href="http://localhost:4000/evading-root-detection/" rel="alternate" type="text/html" title="Android Root Detection Bypass" /><published>2023-09-18T09:29:20+07:00</published><updated>2023-09-18T09:29:20+07:00</updated><id>http://localhost:4000/evading-root-detection</id><content type="html" xml:base="http://localhost:4000/evading-root-detection/"><![CDATA[<p>Helloo readers!</p>
+
+<p>If you are currently reading this, it is likely that you are aware of the disconcerting nature of encountering root detection safeguards during Android black box assessments.</p>
+
+<p>Before going into a more in-depth discussion of reverse engineering, I’ve presented a range of beginner-friendly methods that are highly effective in real-world penetration testing and not just some insecure Android applications.</p>
+
+<h3 id="magisk-hide-module">Magisk Hide Module</h3>
+
+<p>If your device has been rooted using Magisk, you can utilize the MagiskHide feature within the Magisk application.</p>
+
+<ol>
+  <li>Download the <a href="https://github.com/HuskyDG/MagiskHide">Magisk Hide Module</a> on Github and install it from storage.</li>
+  <li>Turn on the MagiskHide Module.</li>
+  <li>Go to Settings &gt; Enable Zygisk &gt; Enable Enforce Deny List &gt; Configure DenyList &gt; Choose the Application.</li>
+</ol>
+
+<figure>
+<img src="/evading-root-detection/img1.PNG" alt="MagiskHide" />
+<figcaption>Fig 1. Magisk Hide</figcaption>
+</figure>
+
+<h3 id="community-script-and-tool">Community Script and Tool</h3>
+
+<p>When working with Frida, the first crucial step is to set up the Frida Server on your Android phone.</p>
+
+<p>This can easily be done by installing <a href="https://github.com/ViRb3/magisk-frida">Frida Server Magisk Module</a>. Turn the module on and restart your phone.</p>
+
+<figure>
+<img src="/evading-root-detection/img2.PNG" alt="Frida Server" />
+<figcaption>Fig 2. Frida Server</figcaption>
+</figure>
+
+<p><strong>Always remember that Frida could not run concurrently with MagiskHide, it is important to disable all the options done from the previous tutorial to try these steps.</strong></p>
+
+<h4 id="frida-script">Frida Script</h4>
+
+<p>Here comes the most and widely used root detection bypass method.</p>
+
+<ol>
+  <li>Connect your USB Cable onto your device.</li>
+  <li>Running the Frida script will spawn the targeted application.</li>
+</ol>
+
+<p>Here is my most used community <a href="https://gist.github.com/pich4ya/0b2a8592d3c8d5df9c34b8d185d2ea35">script</a> to bypass root detection that uses any protections in general.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>frida <span class="nt">-U</span> <span class="nt">-f</span> package.name <span class="nt">-l</span> script.js
+</code></pre></div></div>
+
+<figure>
+<img src="/evading-root-detection/img4.PNG" alt="Frida Script" />
+<figcaption>Fig 3. Frida Script</figcaption>
+</figure>
+
+<h4 id="fridaantirootdetection">FridaAntiRootDetection</h4>
+
+<p>The next <a href="https://github.com/AshenOneYe/FridaAntiRootDetection">Root Evasion Tool</a> that I wanted to share with you is Frida Anti Root Detection by AshenOneYe. This tool works by attaching into the application’s processes.</p>
+
+<p>All it takes is changing the target’s package name in the Python script, and you’re all set! It can be quite entertaining to dabble in script kiddie activities, but remember that responsible and ethical use of your skills is essential to ensure you’re contributing positively to the digital community. 😁</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import frida
+import os
+
+device <span class="o">=</span> frida.get_usb_device<span class="o">()</span>
+print<span class="o">(</span>device<span class="o">)</span>
+
+target <span class="o">=</span> <span class="s2">"CHANGE_HERE"</span>
+</code></pre></div></div>
+
+<figure>
+<img src="/evading-root-detection/img3.PNG" alt="FridaAntiRootDetection" />
+<figcaption>Fig 4. FridaAntiRootDetection</figcaption>
+</figure>
+
+<h4 id="objection">Objection</h4>
+
+<p>Last but not least is Objection, besides providing root bypass capability, it also offers many more versatile usages such as runtime mobile exploration.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">objection --gadget "package.name" explore</code></li>
+  <li><code class="language-plaintext highlighter-rouge">android root disable</code></li>
+</ol>
+
+<figure>
+<img src="/evading-root-detection/img5.PNG" alt="Objection" />
+<figcaption>Fig 5. Objection</figcaption>
+</figure>
+
+<p>So that’s it guys, may this methods help you to get rid of your root detection problem.</p>
+
+<p>See you on my next blog post!</p>]]></content><author><name>William Tirtadjaja</name><email>tirtadjajawilliam@gmail.com</email></author><category term="jekyll" /><category term="update" /><category term="tips" /><category term="android" /><category term="mobile" /><summary type="html"><![CDATA[Helloo readers!]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/%5B%22/evading-root-detection/img1.PNG%22%5D" /><media:content medium="image" url="http://localhost:4000/%5B%22/evading-root-detection/img1.PNG%22%5D" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
