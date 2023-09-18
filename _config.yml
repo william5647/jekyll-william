@@ -5,7 +5,7 @@ description: >- # site description
   pertaining to Penetration Testing and Vulnerability Assessments.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+image: /assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/william5647/jekyll-william # site repo [optional]
 mode: dark # default theme "dark" | "light"
 
