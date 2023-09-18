@@ -1,7 +1,8 @@
 # Site settings
 title: William Tirtadjaja # site title
 description: >- # site description
-Feel free to delve into my blog, where I provide an abundance of insights on subjects pertaining to Penetration Testing and Vulnerability Assessments.
+  Feel free to delve into my blog, where I provide an abundance of insights on subjects 
+  pertaining to Penetration Testing and Vulnerability Assessments.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
 image: assets/img/ogp1.png # This image used for Open Graph more info https://ogp.me/
