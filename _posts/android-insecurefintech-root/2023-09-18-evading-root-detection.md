@@ -99,8 +99,7 @@ target = "CHANGE_HERE"
 
 Last but not least is Objection, besides providing root bypass capability, it also offers many more versatile usages such as runtime mobile exploration.
 
-1. ```objection --gadget "package.name" explore```
-2. ```android root disable```
+```objection --gadget "package.name" explore```
 
 <figure>
 <img src="{{ page.image4 }}" alt="Objection">
