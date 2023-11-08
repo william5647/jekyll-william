@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Detecting and Exploiting Insecure Deserialization"
+title:  "Detecting and Exploiting Insecure Deserialization Part 1"
 date:   2023-10-02 21:29:20 +0700
 categories: jekyll update
 usemathjax: true
@@ -42,7 +42,7 @@ Identifying insecure deserialization is relatively simple regardless of whether 
 
 During auditing, you should look at all data being passed into the website and try to identify anything that looks like serialized data. Serialized data can be identified relatively easily if you know the format that different languages use.
 
-## PHP serialization format
+PHP serialization format
 
 PHP uses a mostly human-readable string format, with letters representing the data type and numbers representing the length of each entry. For example, consider a User object with the attributes:
 
@@ -65,7 +65,7 @@ s:10:"isLoggedIn" - The key of the second attribute is the 10-character string "
 b:1 - The value of the second attribute is the boolean value true
 ```
 
-## Java serialization format
+Java serialization format
 
 Java uses binary serialization formats and serialized Java objects always begin with the same bytes, which are encoded as ```ac ed``` in hexadecimal and ```rO0``` in Base64.
 
