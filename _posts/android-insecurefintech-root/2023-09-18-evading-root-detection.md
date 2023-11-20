@@ -63,7 +63,8 @@ Here comes the most and widely used root detection bypass method.
 Here is my most used community [script](https://gist.github.com/pich4ya/0b2a8592d3c8d5df9c34b8d185d2ea35) to bypass root detection that uses any protections in general.
 
 ```bash
-frida -U -f package.name -l script.js
+frida -U -f package.name -l root-detection.js
+frida -l root-detection.js -U -n 'appname'
 ```
 
 
