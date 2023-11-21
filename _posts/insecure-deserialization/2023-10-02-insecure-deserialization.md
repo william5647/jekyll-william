@@ -76,14 +76,14 @@ Java uses binary serialization formats and serialized Java objects always begin 
 <figcaption>Fig 1. Session Cookie</figcaption>
 </figure>
 
-Decode the session cookie from base64 into plaintext, modify the admin attribute into 1, and re-encode it
+1. Decode the session cookie from base64 into plaintext, modify the admin attribute into 1, and re-encode it.
 
 <figure>
 <img src="{{ page.image2 }}" alt="">
 <figcaption>Fig 2. New Session Cookie</figcaption>
 </figure>
 
-Use the new session cookie, to elevate our privilege into admin
+2. Use the new session cookie, to elevate our privilege into admin.
 
 <figure>
 <img src="{{ page.image3 }}" alt="">
@@ -107,17 +107,17 @@ Why? Because there is no number, that is, 0 numerals in the string. PHP treats t
 <figcaption>Fig 4. Session Cookie</figcaption>
 </figure>
 
-- Update the length of the username attribute to 13.
-- Change the username to administrator.
-- Change the access token to the integer 0. As this is no longer a string, you also need to remove the double-quotes surrounding the value.
-- Update the data type label for the access token by replacing s with i.
+1. Update the length of the username attribute to 13.
+2. Change the username to administrator.
+3. Change the access token to the integer 0. As this is no longer a string, you also need to remove the double-quotes surrounding the value.
+4. Update the data type label for the access token by replacing s with i.
 
 <figure>
 <img src="{{ page.image5 }}" alt="">
 <figcaption>Fig 5. New Session Cookie</figcaption>
 </figure>
 
-Use the new session cookie, to elevate our privilege into admin
+5. Use the new session cookie, to elevate our privilege into admin.
 
 <figure>
 <img src="{{ page.image6 }}" alt="">
@@ -135,14 +135,14 @@ Notice that the serialized object has an avatar_link attribute, which contains t
 <figcaption>Fig 7. Session Cookie</figcaption>
 </figure>
 
-Edit the serialized data to /home/carlos/morale.txt
+1. Edit the serialized data to your target.
 
 <figure>
 <img src="{{ page.image8 }}" alt="">
 <figcaption>Fig 8. New Session Cookie</figcaption>
 </figure>
 
-Change the request line to POST /my-account/delete and send the request. Your account will be deleted, along with Carlos's morale.txt file. 
+2. Change the request line to POST /my-account/delete and send the request. Your account will be deleted, along with Carlos's targeted file. 
 
 <figure>
 <img src="{{ page.image9 }}" alt="">
