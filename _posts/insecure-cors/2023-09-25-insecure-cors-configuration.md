@@ -161,7 +161,7 @@ In this scenario, we found a reflected XSS vulnerability on the 'Check Stock' fe
 <figcaption>Fig 8. XSS</figcaption>
 </figure>
 
-Craft a one-liner JavaScript to exfiltrate the apiKey
+Craft a one-liner JavaScript to exfiltrate the apiKey.
 
 ```javascript
 <script>
