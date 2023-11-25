@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Detecting and Exploiting Insecure CORS Configuration"
+title:  "Insecure CORS Configuration"
 date:   2023-09-25 21:29:20 +0700
 categories: jekyll update
 usemathjax: true
