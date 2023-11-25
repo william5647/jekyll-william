@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Detecting and Exploiting Insecure Deserialization Part 2"
+title:  "Insecure Deserialization Part 2"
 date:   2023-10-09 21:29:20 +0700
 categories: jekyll update
 usemathjax: true
