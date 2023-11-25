@@ -153,9 +153,6 @@ Replace your session cookie with the malicious one you just created, then send t
 <figcaption>Fig 10. Resend Encoded Payload</figcaption>
 </figure>
 
-### Exploiting Ruby Deserialization Using a Documented Gadget Chain
-
-There may not always be a dedicated tool available for exploiting known gadget chains in the framework used by the target application. In this case, it's always worth looking online to see if there are any documented exploits that you can adapt manually. Tweaking the code may require some basic understanding of the language and framework, and you might sometimes need to serialize the object yourself, but this approach is still considerably less effort than building an exploit from scratch.
 
 
 
