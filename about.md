@@ -16,6 +16,7 @@ Should you have any questions or need further information, please feel free to s
 - OSCP (Offensive Security Certified Professional)
 - CPSA (CREST Practitioner Security Analyst)
 - CRT (CREST Registered Penetration Tester)
+- eWPTXv2 (eLearnSecurity Web Application Penetration Tester eXtreme)
 
 **Contact Info**
 
